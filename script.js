@@ -69,8 +69,11 @@ function loadDogFact() {
             let td = $('<td></td>').text(data.facts[0]);
             tr.append(th);
             tr.append(td);
-
-            localDogs[localDogs.length] = new Dog(countOfDogs, data.facts[0]);
+            if (localDogs == null) {
+                localDrinks[0] = new Dog(countOfDogs, data.facts[0]);
+            } else {
+                localDogs[localDogs.length] = new Dog(countOfDogs, data.facts[0]);
+            }
 
             localStorage.setItem("dogs", JSON.stringify(localDogs));
             countOfDogs++;
@@ -114,8 +117,12 @@ function loadDrink() {
                 tr.append(td1);
                 tr.append(td2);
                 tr.append(td3);
+                if (localDrinks == null) {
+                    localDrinks[0] = new Drink(data.drinks[i].idDrink, data.drinks[i].strDrink, data.drinks[i].strCategory, data.drinks[i].strGlass)
 
-                localDrinks[localDrinks.length] = new Drink(data.drinks[i].idDrink, data.drinks[i].strDrink, data.drinks[i].strCategory, data.drinks[i].strGlass)
+                } else {
+                    localDrinks[localDrinks.length] = new Drink(data.drinks[i].idDrink, data.drinks[i].strDrink, data.drinks[i].strCategory, data.drinks[i].strGlass)
+                }
                 localStorage.setItem("drinks", JSON.stringify(localDrinks));
                 $("#drinks").css('opacity', 0);
                 $("#drinks").append(tr);
@@ -166,8 +173,13 @@ function loadDrinkByLetter() {
                 tr.append(td1);
                 tr.append(td2);
                 tr.append(td3);
+                if (localDrinks == null) {
+                    localDrinks[0] = new Drink(data.drinks[i].idDrink, data.drinks[i].strDrink, data.drinks[i].strCategory, data.drinks[i].strGlass)
 
-                localDrinks[localDrinks.length] = new Drink(data.drinks[i].idDrink, data.drinks[i].strDrink, data.drinks[i].strCategory, data.drinks[i].strGlass)
+                } else {
+                    localDrinks[localDrinks.length] = new Drink(data.drinks[i].idDrink, data.drinks[i].strDrink, data.drinks[i].strCategory, data.drinks[i].strGlass)
+
+                }
                 localStorage.setItem("drinks", JSON.stringify(localDrinks));
 
 

@@ -230,13 +230,13 @@ function loadDrinkLocal() {
 }
 
 function deleteDrinks() {
-	localDrinks = [];
-	localStorage.setItem("drinks", JSON.stringify(localDrinks));
-	$("#drinks").html('');
+    localDrinks = [];
+    localStorage.setItem("drinks", JSON.stringify(localDrinks));
+    $("#drinks").html('');
 }
 
 function deleteDogs() {
-	localDogs = [];
-	localStorage.setItem("dogs", JSON.stringify(localDogs));
-	$("#dogFactsTable").html('');
+    localDogs = [];
+    localStorage.setItem("dogs", JSON.stringify(localDogs));
+    $("#dogFactsTable").html('');
 }

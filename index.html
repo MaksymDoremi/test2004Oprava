@@ -17,6 +17,11 @@
 
 	<div class="container">
 		<h1>Drinks</h1>
+		<div class="input-group mb-3">
+			<span class="input-group-text" id="firstLetterDrink">First Letter</span>
+			<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="firstLetterDrink" id='inputLetter'>
+		</div>
+		<button type="button" class="btn btn-primary" onclick="loadDrinkByLetter()">Load new Drink by letter in input</button>
 		<table class="table">
 			<thead>
 				<tr>
@@ -26,25 +31,8 @@
 					<th scope="col">strGlass</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>a</td>
-					<td>a</td>
-					<td>a</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>a</td>
-					<td>a</td>
-					<td>a</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>a</td>
-					<td>a</td>
-					<td>a</td>
-				</tr>
+			<tbody id="drinks">
+			
 			</tbody>
 			
 		</table>
@@ -59,7 +47,7 @@
 				</tr>
 			</thead>
 			<tbody id="dogFactsTable">
-			
+
 			</tbody>
 		</div>
 

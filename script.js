@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     let dogs = JSON.parse(localStorage.getItem("dogs"));
     localDogs = dogs;
-    if (dogs == null) {
+    if (localDogs == null) {
         loadDogFact();
 
     } else {
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
     let drinks = JSON.parse(localStorage.getItem("drinks"));
     localDrinks = drinks;
-    if (drinks == null) {
+    if (localDrinks == null) {
         loadDrink();
     } else {
         loadDrinkLocal();

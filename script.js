@@ -1,11 +1,11 @@
 const dogURL = 'https://dog-api.kinduff.com/api/facts';
 const cocktailURLbyLetter = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?'; //input cocktail letter
 
-let drinks = [];
-let dogs = [];
+var drinks = [];
+var dogs = [];
 
-let localDrinks = [];
-let localDogs = [];
+var localDrinks = [];
+var localDogs = [];
 
 class Dog {
     constructor(id, fact) {
@@ -70,7 +70,8 @@ function loadDogFact() {
             tr.append(th);
             tr.append(td);
             if (localDogs == null) {
-                localDrinks[0] = new Dog(countOfDogs, data.facts[0]);
+            	localDogs = [];
+                localDogs[0] = new Dog(countOfDogs, data.facts[0]);
             } else {
                 localDogs[localDogs.length] = new Dog(countOfDogs, data.facts[0]);
             }
@@ -118,6 +119,7 @@ function loadDrink() {
                 tr.append(td2);
                 tr.append(td3);
                 if (localDrinks == null) {
+                	localDrinks = [];
                     localDrinks[0] = new Drink(data.drinks[i].idDrink, data.drinks[i].strDrink, data.drinks[i].strCategory, data.drinks[i].strGlass)
 
                 } else {
@@ -174,6 +176,7 @@ function loadDrinkByLetter() {
                 tr.append(td2);
                 tr.append(td3);
                 if (localDrinks == null) {
+                	localDrinks = [];
                     localDrinks[0] = new Drink(data.drinks[i].idDrink, data.drinks[i].strDrink, data.drinks[i].strCategory, data.drinks[i].strGlass)
 
                 } else {

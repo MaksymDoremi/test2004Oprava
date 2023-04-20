@@ -166,7 +166,7 @@ function loadDrinkByLetter() {
                 tr.append(td1);
                 tr.append(td2);
                 tr.append(td3);
-                
+
                 localDrinks[localDrinks.length] = new Drink(data.drinks[i].idDrink, data.drinks[i].strDrink, data.drinks[i].strCategory, data.drinks[i].strGlass)
                 localStorage.setItem("drinks", JSON.stringify(localDrinks));
 
@@ -227,4 +227,16 @@ function loadDrinkLocal() {
 
 
     }
+}
+
+function deleteDrinks() {
+	localDrinks = [];
+	localStorage.setItem("drinks", JSON.stringify(localDrinks));
+	$("#drinks").html('');
+}
+
+function deleteDogs() {
+	localDogs = [];
+	localStorage.setItem("dogs", JSON.stringify(localDogs));
+	$("#dogFactsTable").html('');
 }
